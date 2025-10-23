@@ -27,7 +27,7 @@ const projects: Project[] = [
     year: "WIP",
     tags: ["Next.js", "shadcn/ui", "Tailwind"],
     repo: "https://github.com/louienfranco/",
-    demo: "#",
+    // demo: "#",
   },
   {
     title: "Portfolio",
@@ -36,7 +36,7 @@ const projects: Project[] = [
     year: "WIP",
     tags: ["Next.js", "App Router"],
     repo: "https://github.com/louienfranco/louien",
-    demo: "#",
+    // demo: "#",
   },
   {
     title: "Product Costing Calculator",
@@ -44,7 +44,8 @@ const projects: Project[] = [
       "Tool for experimenting with and fine-tuning ingredient costs, portion sizes, and recipe pricing.",
     year: "WIP",
     tags: ["Experiments"],
-    demo: "#",
+    repo: "https://github.com/louienfranco/",
+    // demo: "#",
   },
 ];
 
