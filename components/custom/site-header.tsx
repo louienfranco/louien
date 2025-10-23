@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -41,6 +41,19 @@ const links: NavLink[] = [
 function MobileSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const previousPathname = useRef(pathname);
+
+  // Close sidebar when pathname changes
+  useEffect(() => {
+    if (previousPathname.current !== pathname) {
+      previousPathname.current = pathname;
+      // Use setTimeout to avoid synchronous setState in effect
+      const timer = setTimeout(() => {
+        setOpen(false);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname]);
 
   return (
     <div className="md:hidden">
@@ -84,7 +97,6 @@ function MobileSidebar() {
                   <Link
                     key={href}
                     href={href}
-                    onClick={() => setOpen(false)}
                     className={[
                       "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
                       active
@@ -126,7 +138,7 @@ function MobileSidebar() {
   );
 }
 
-/* Floating “Dynamic Island” header */
+/* Floating "Dynamic Island" header */
 export default function SiteHeader() {
   const pathname = usePathname();
   const { resolvedTheme, setTheme } = useTheme();
