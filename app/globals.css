@@ -120,3 +120,123 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* For RBG Button */
+/* RGB Button Specific Styles */
+.rgb-button {
+  /* rainbow stops */
+  --rgb-color-1: 0 85% 60%;
+  --rgb-color-2: 40 95% 55%;
+  --rgb-color-3: 140 55% 45%;
+  --rgb-color-4: 210 90% 60%;
+  --rgb-color-5: 265 85% 62%;
+
+  /* default (light app theme): dark interior + light text for contrast */
+  --rgb-btn-base-bg: #121213;
+  --rgb-btn-foreground: #ffffff;
+
+  /* border/glow gradient - extended for smooth animation */
+  --rgb-btn-border: linear-gradient(
+    90deg,
+    hsl(var(--rgb-color-1)),
+    hsl(var(--rgb-color-2)),
+    hsl(var(--rgb-color-3)),
+    hsl(var(--rgb-color-4)),
+    hsl(var(--rgb-color-5)),
+    hsl(var(--rgb-color-1)) /* repeat first color for seamless loop */
+  );
+}
+
+/* dark mode variables for RGB button */
+html.dark .rgb-button {
+  --rgb-btn-base-bg: #ffffff;
+  --rgb-btn-foreground: #111213;
+}
+
+/* Helps avoid "flash" before next-themes hydrates */
+@media (prefers-color-scheme: dark) {
+  html:not(.light):not(.dark) .rgb-button {
+    --rgb-btn-base-bg: #ffffff;
+    --rgb-btn-foreground: #111213;
+  }
+}
+
+/* Rainbow animation keyframes */
+@keyframes rgb-rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Apply animation class */
+.rgb-button-animated {
+  background-size: 200% 200%, 200% 200% !important;
+  animation: rgb-rainbow 3s linear infinite;
+}
+
+/* Glow effect animation */
+.rgb-button-glow::before {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  height: 20%;
+  width: 60%;
+  border-radius: inherit;
+  background: var(--rgb-btn-border);
+  background-size: 200% 200%;
+  filter: blur(0.8rem);
+  opacity: 0.8;
+  animation: rgb-rainbow 3s linear infinite;
+}
+
+/* Enhanced rainbow animation with pulse */
+@keyframes rgb-rainbow-pulse {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    filter: blur(0.8rem) brightness(1);
+  }
+  25% {
+    background-position: 50% 50%;
+    filter: blur(1rem) brightness(1.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(0.8rem) brightness(1);
+  }
+  75% {
+    background-position: 150% 50%;
+    filter: blur(1rem) brightness(1.2);
+  }
+}
+
+/* Apply to glow for pulsing effect */
+.rgb-button-glow-pulse::before {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  height: 20%;
+  width: 60%;
+  border-radius: inherit;
+  background: var(--rgb-btn-border);
+  background-size: 200% 200%;
+  opacity: 0.8;
+  animation: rgb-rainbow-pulse 3s ease-in-out infinite;
+}
+
+/* Smoother main button animation */
+.rgb-button-smooth {
+  background-size: 300% 300%, 300% 300% !important;
+  animation: rgb-rainbow 4s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* END For RGB Button */
