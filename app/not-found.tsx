@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Loader2, Home } from "lucide-react";
+import { Loader, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
     <main className="min-h-screen grid place-items-center px-4">
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-2 text-muted-foreground">
-          <Loader2
+          <Loader
             className="h-5 w-5 animate-spin text-primary"
             aria-hidden="true"
           />
