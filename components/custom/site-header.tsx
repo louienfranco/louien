@@ -31,8 +31,8 @@ type NavLink = { href: string; label: string; icon?: LucideIcon };
 
 const links: NavLink[] = [
   { href: "/", label: "Home", icon: HomeIcon },
+  { href: "/about", label: "About", icon: LayoutPanelLeft },
   { href: "/projects", label: "Projects", icon: FolderGit2 },
-  { href: "/templates", label: "Templates", icon: LayoutPanelLeft },
   { href: "/showcase", label: "Showcase", icon: Sparkles },
   { href: "/contact", label: "Contact", icon: Mail },
 ];
@@ -134,7 +134,7 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className="font-sans pointer-events-none fixed inset-x-0 top-3 z-50 sm:top-4 md:top-6">
+    <header className="pointer-events-none fixed inset-x-0 top-3 z-50 sm:top-4 md:top-6">
       <div className="mx-auto w-full max-w-3xl px-3 sm:px-4 pointer-events-auto">
         <div
           className={[

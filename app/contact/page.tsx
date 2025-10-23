@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Github, Twitter, MapPin, Send } from "lucide-react";
+import { Mail, Github, Twitter, MapPin } from "lucide-react";
+import ContactForm from "./_form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const EMAIL = "you@example.com"; // replace with your email
+  const EMAIL = "louienfrancoaxalan@gmail.com";
 
   return (
-    <section className="font-mono mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 py-10 md:py-14 mt-8">
-      <header className="mb-6 md:mb-8">
-        <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">
+    <section className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 py-10 md:py-14">
+      <header className="mb-6 md:mb-8 mt-10 sm:mt-10 lg:mt-10">
+        <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">
           Contact
         </h1>
         <p className="mt-2 text-muted-foreground max-w-2xl">
@@ -27,82 +25,9 @@ export default function ContactPage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
-        {/* Form */}
+        {/* Form (client) */}
         <div className="md:col-span-7 rounded-2xl border p-5 md:p-6">
-          <form
-            action={`mailto:${EMAIL}`}
-            method="post"
-            encType="text/plain"
-            className="space-y-4"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  autoComplete="name"
-                  className="bg-background focus-visible:ring-0 focus-visible:ring-offset-0"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  autoComplete="email"
-                  className="bg-background focus-visible:ring-0 focus-visible:ring-offset-0"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="subject">Subject</Label>
-              <Input
-                id="subject"
-                name="subject"
-                placeholder="What’s this about?"
-                className="bg-background focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="Tell me a bit about your project or question…"
-                rows={6}
-                className="bg-background focus-visible:ring-0 focus-visible:ring-offset-0"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              <Button type="submit" className="gap-2">
-                <Send className="h-4 w-4" />
-                Send message
-              </Button>
-
-              {/* Fallback: open mail client */}
-              <Button asChild variant="outline">
-                <Link href={`mailto:${EMAIL}`}>
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email me directly
-                </Link>
-              </Button>
-            </div>
-
-            <p className="text-xs text-muted-foreground">
-              Note: This uses a mailto action. Replace with an API route or a
-              form service if you need server-side handling.
-            </p>
-          </form>
+          <ContactForm email={EMAIL} />
         </div>
 
         {/* Info panel */}

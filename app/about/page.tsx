@@ -37,10 +37,10 @@ export default function AboutMinimal() {
   return (
     <section
       id="about"
-      className="font-mono mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 pt-10 md:pt-14 pb-6 md:pb-8"
+      className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 pt-10 md:pt-14 pb-6 md:pb-8"
     >
-      <header className="mb-6 md:mb-8 mt-10 sm:mt-10 lg:mt-0">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">About</h2>
+      <header className="mb-6 md:mb-8 mt-10 sm:mt-10 lg:mt-10">
+        <h2 className="text-2xl md:text-4xl font-bold tracking-tight">About</h2>
         <p className="mt-2 text-muted-foreground max-w-2xl">
           Meet a skilled Front‑end Developer.
         </p>

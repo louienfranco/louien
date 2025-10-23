@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 
 // Custom Site Header
 import SiteHeader from "@/components/custom/site-header";
-import Footer from "@/components/about/footer";
+import Footer from "@/components/items/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono`}
       >
         <ThemeProvider
           attribute="class"
@@ -44,7 +44,7 @@ export default function RootLayout({
           <SiteHeader />
           {children}
         </ThemeProvider>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

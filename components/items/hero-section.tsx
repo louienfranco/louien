@@ -3,6 +3,8 @@ import { badgeVariants } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+import { DottedGridPattern } from "@/components/custom/bg-style";
+
 // Custom items here
 import { RGBButton } from "@/components/custom/rgb-button";
 
@@ -12,6 +14,20 @@ export default function HeroSection() {
       className="w-full min-h-screen flex flex-col items-center justify-center"
       aria-labelledby="hero-heading"
     >
+      {" "}
+      <DottedGridPattern
+        width={28}
+        height={28}
+        cr={1}
+        squares={[
+          [4, 4],
+          [5, 1],
+          [8, 2],
+          [5, 3],
+          [5, 5],
+        ]}
+        className="[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+      />
       <div className="container px-4 md:px-6 space-y-10 md:space-y-16 max-w-5xl mx-auto">
         <div className="flex flex-col items-center text-center space-y-4">
           <div className="inline-block">
@@ -64,13 +80,13 @@ export default function HeroSection() {
             Louien Franco
           </h1>
 
-          <p className="font-mono text-muted-foreground text-base md:text-lg max-w-[42rem]">
+          <p className="text-muted-foreground text-base md:text-lg max-w-[42rem]">
             I craft modern, responsive interfaces that blend design and
             functionality to deliver seamless user experiences.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Link href="#about" passHref>
+            <Link href="/about" passHref>
               <RGBButton variant="pulse">Know More</RGBButton>
             </Link>
             {/* <Button size="lg" variant="outline" className="w-full sm:w-auto">

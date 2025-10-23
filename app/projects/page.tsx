@@ -23,7 +23,7 @@ const projects: Project[] = [
   {
     title: "UI Blocks",
     description: "Reusable shadcn/ui blocks for fast prototyping.",
-    year: "2025",
+    year: "WIP",
     tags: ["Next.js", "shadcn/ui", "Tailwind"],
     repo: "https://github.com/louienfranco/",
     demo: "#",
@@ -31,32 +31,10 @@ const projects: Project[] = [
   {
     title: "Portfolio",
     description: "Minimal developer portfolio with dynamic island header.",
-    year: "2025",
+    year: "WIP",
     tags: ["Next.js", "App Router"],
-    repo: "https://github.com/louienfranco/",
+    repo: "https://github.com/louienfranco/louien",
     demo: "#",
-  },
-  {
-    title: "MDX Blog",
-    description: "Blog system with MDX, tags, and RSS.",
-    year: "2024",
-    tags: ["MDX", "Contentlayer"],
-    repo: "https://github.com/louienfranco/",
-    demo: "#",
-  },
-  {
-    title: "Realtime Chat",
-    description: "Socket-powered chat with presence and reactions.",
-    year: "2024",
-    tags: ["WebSocket", "Prisma"],
-    repo: "https://github.com/louienfranco/",
-  },
-  {
-    title: "Design Tokens",
-    description: "Systemized colors, spacing, and typography tokens.",
-    year: "2023",
-    tags: ["Design System"],
-    repo: "https://github.com/louienfranco/",
   },
   {
     title: "Playground",
@@ -69,9 +47,9 @@ const projects: Project[] = [
 
 export default function ProjectPage() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 py-10 md:py-14 mt-8">
-      <header className="mb-6 md:mb-8">
-        <h1 className="font-mono text-3xl md:text-5xl font-semibold tracking-tight">
+    <section className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 py-10 md:py-14">
+      <header className="mb-6 md:mb-8 mt-10 sm:mt-10 lg:mt-10">
+        <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">
           Projects
         </h1>
         <p className="mt-2 text-muted-foreground max-w-2xl">

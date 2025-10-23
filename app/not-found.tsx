@@ -4,7 +4,7 @@ import { Loader2, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="font-mono min-h-screen grid place-items-center px-4">
+    <main className="min-h-screen grid place-items-center px-4">
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-2 text-muted-foreground">
           <Loader2
