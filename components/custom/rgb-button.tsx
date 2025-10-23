@@ -30,7 +30,7 @@ const RGBButton = forwardRef<HTMLButtonElement, RGBButtonProps>(
         }}
         className={cn(
           "rgb-button", // Base class that defines the CSS variables
-          "relative inline-flex h-11 items-center justify-center rounded-xl px-8 py-2 font-medium transition-all duration-200",
+          "relative inline-flex h-10 items-center justify-center rounded-xl px-8 py-2 font-medium transition-all duration-200",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
           "disabled:pointer-events-none disabled:opacity-50",
           animationClass,

@@ -22,7 +22,8 @@ type Project = {
 const projects: Project[] = [
   {
     title: "UI Blocks",
-    description: "Reusable shadcn/ui blocks for fast prototyping.",
+    description:
+      "Reusable shadcn/ui blocks for fast prototyping and efficient design integration.",
     year: "WIP",
     tags: ["Next.js", "shadcn/ui", "Tailwind"],
     repo: "https://github.com/louienfranco/",
@@ -30,15 +31,17 @@ const projects: Project[] = [
   },
   {
     title: "Portfolio",
-    description: "Minimal developer portfolio with dynamic island header.",
+    description:
+      "Minimal developer portfolio with dynamic island header and interactive project showcase.",
     year: "WIP",
     tags: ["Next.js", "App Router"],
     repo: "https://github.com/louienfranco/louien",
     demo: "#",
   },
   {
-    title: "Playground",
-    description: "Small experiments and UI micro-interactions.",
+    title: "Product Costing Calculator",
+    description:
+      "Tool for experimenting with and fine-tuning ingredient costs, portion sizes, and recipe pricing.",
     year: "WIP",
     tags: ["Experiments"],
     demo: "#",
