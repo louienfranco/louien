@@ -21,7 +21,7 @@ export default function AboutMinimal() {
     { icon: MapPin, label: "City", value: "Batangas" },
     { icon: Clapperboard, label: "Movie", value: "Ironman" },
     { icon: Tv, label: "TV Show", value: "Showtime" },
-    { icon: Utensils, label: "Food", value: "Nachos" },
+    { icon: Utensils, label: "Food", value: "Cookies & Coffee" },
     { icon: Laptop, label: "System", value: "Linux/Windows" },
   ];
 

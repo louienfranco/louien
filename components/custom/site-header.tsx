@@ -22,6 +22,7 @@ import {
   FolderGit2,
   LayoutPanelLeft,
   Sparkles,
+  Wrench,
   Github,
   CircleUser,
   type LucideIcon,
@@ -34,7 +35,7 @@ const links: NavLink[] = [
   { href: "/", label: "Home", icon: HomeIcon },
   { href: "/about", label: "About", icon: CircleUser },
   { href: "/projects", label: "Projects", icon: FolderGit2 },
-  { href: "/showcase", label: "Showcase", icon: Sparkles },
+  { href: "/tools", label: "Tools", icon: Wrench },
   { href: "/contact", label: "Contact", icon: Mail },
 ];
 
