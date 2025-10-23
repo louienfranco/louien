@@ -23,6 +23,7 @@ import {
   LayoutPanelLeft,
   Sparkles,
   Github,
+  CircleUser,
   type LucideIcon,
 } from "lucide-react";
 
@@ -31,7 +32,7 @@ type NavLink = { href: string; label: string; icon?: LucideIcon };
 
 const links: NavLink[] = [
   { href: "/", label: "Home", icon: HomeIcon },
-  { href: "/about", label: "About", icon: LayoutPanelLeft },
+  { href: "/about", label: "About", icon: CircleUser },
   { href: "/projects", label: "Projects", icon: FolderGit2 },
   { href: "/showcase", label: "Showcase", icon: Sparkles },
   { href: "/contact", label: "Contact", icon: Mail },
