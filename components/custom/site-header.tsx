@@ -53,8 +53,14 @@ function MobileSidebar() {
 
         <SheetContent
           side="left"
-          className="w-80 sm:w-96 p-0"
           aria-label="Mobile sidebar"
+          className="
+            p-0
+            w-[clamp(16rem,88vw,22rem)]   /* auto-adjust on tiny screens */
+            sm:w-[22rem]                  /* fixed on ≥640px */
+            md:w-[24rem]                  /* slightly wider on ≥768px */
+            max-w-[calc(100vw-1rem)]      /* keep a small viewport edge margin */
+          "
         >
           <SheetHeader className="sr-only">
             <SheetTitle>Mobile sidebar</SheetTitle>
