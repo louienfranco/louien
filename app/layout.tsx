@@ -6,7 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
 // Custom Site Header
-import SiteHeader from "@/components/custom/site-header";
+import SiteHeader from "@/components/custom/site-dropbar";
 import Footer from "@/components/items/footer";
 
 const geistSans = Geist({
