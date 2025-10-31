@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
@@ -84,7 +85,7 @@ export default function SiteHeader() {
   }, []);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-3 z-50 sm:top-4 md:top-6">
+    <header className="font-mono pointer-events-none fixed inset-x-0 top-3 z-50 sm:top-4 md:top-6">
       <div className="mx-auto w-full max-w-3xl px-3 sm:px-4 pointer-events-auto">
         <div
           className={[
@@ -134,7 +135,7 @@ export default function SiteHeader() {
             </Link>
 
             {/* Desktop nav */}
-            <nav className="mx-2 hidden md:flex items-center gap-4">
+            {/* <nav className="mx-2 hidden md:flex flex-1 items-center justify-center gap-3">
               {links.map(({ href, label }) => {
                 const active = pathname === href;
                 return (
@@ -142,7 +143,7 @@ export default function SiteHeader() {
                     key={href}
                     href={href}
                     className={[
-                      "rounded-full px-3 py-1.5 text-sm transition-colors",
+                      "rounded-lg px-3 py-1.5 text-sm transition-colors",
                       active
                         ? "bg-muted text-foreground"
                         : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
@@ -153,6 +154,40 @@ export default function SiteHeader() {
                   </Link>
                 );
               })}
+            </nav> */}
+
+            <nav className="mx-2 hidden md:flex flex-1 items-center justify-center gap-3">
+              {links.map(({ href, label }) => {
+                const active = pathname === href;
+
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    aria-current={active ? "page" : undefined}
+                    className={[
+                      "relative rounded-lg px-3 py-1.5 text-sm",
+                      "transition-colors duration-200",
+                      active
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/60",
+                    ].join(" ")}
+                  >
+                    {active && (
+                      <motion.span
+                        layoutId="nav-active-pill"
+                        className="absolute inset-0 rounded-lg bg-muted"
+                        transition={{
+                          type: "spring",
+                          duration: 0.5,
+                          bounce: 0.25,
+                        }}
+                      />
+                    )}
+                    <span className="relative z-10">{label}</span>
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Theme toggle */}
@@ -160,7 +195,7 @@ export default function SiteHeader() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full bg-background text-foreground border border-border shadow-sm hover:bg-muted/60"
+                className="rounded-xl bg-background text-foreground border border-border shadow-sm hover:bg-muted/60"
                 onClick={() =>
                   setTheme(resolvedTheme === "dark" ? "light" : "dark")
                 }
@@ -193,7 +228,7 @@ export default function SiteHeader() {
                       key={href}
                       href={href}
                       className={[
-                        "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
+                        "flex items-center gap-3 rounded-md px-3 py-2 my-2 text-sm transition-colors",
                         active
                           ? "bg-muted text-foreground"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted/60",
